@@ -1,6 +1,7 @@
 <template>
   <h1>CRYPTO</h1>
-  <Input />
+  <Input :changeAmout="changeAmout" />
+
   <div className="selectors">
   <Selector />
   <Selector />
@@ -12,7 +13,17 @@ import Input from './components/Input.vue'
 import Selector from './components/Selector.vue'
 
 export default {
-    components: { Input, Selector }
+    components: { Input, Selector }, 
+    data() {
+      return {
+        amout: 0
+      }
+    },
+    methods: {
+      changeAmout(val){
+
+      }
+    },
 }
 
 

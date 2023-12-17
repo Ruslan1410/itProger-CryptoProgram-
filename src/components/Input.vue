@@ -1,10 +1,15 @@
 <template>
-    <input type="number">
+    <input type="number" @input="changeAmout($event.target.value)" placeholder="Введите число">
 </template>
     
 <script>
 export default {
-
+    props: {
+        changeAmout: {
+            type: Function,
+            required: true
+        }
+    }
 }
 </script>
     
