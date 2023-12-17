@@ -13,7 +13,9 @@ export default {
 <style scoped>
     input {
         outline: none;
-        text-align: center;
+        width: 500px;
+        top: -50px;
+        font-size: 1.2em;
         border-radius: 3px;
         border: 0;
         padding: 10px 15px;
