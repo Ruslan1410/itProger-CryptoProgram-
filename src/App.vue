@@ -3,8 +3,8 @@
   <Input :changeAmout="changeAmout" />
 
   <div className="selectors">
-  <Selector />
-  <Selector />
+  <Selector :setCryoto="setCryptoFirst"/>
+  <Selector :setCryoto="setCryptoSecond"/>
   </div>
 </template>
 
@@ -16,14 +16,22 @@ export default {
     components: { Input, Selector }, 
     data() {
       return {
-        amout: 0
+        amout: 0,
+        cryptoFirst: '',
+        cryptoSecond: '',
       }
     },
     methods: {
       changeAmout(val){
-
+        this.amout = val
+      },
+      setCryptoFirst(val){
+        this.cryptoFirst = val
+      },
+      setCryptoSecond(val){
+        this.cryptoSecond = val
       }
-    },
+    }
 }
 
 
