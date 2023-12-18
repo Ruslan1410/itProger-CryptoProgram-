@@ -1,7 +1,7 @@
 <template>
   <h1>CRYPTO</h1>
   <Input :changeAmout="changeAmout" convert="convert" />
-
+  <p v-if="error != ''">{{ error }}</p>
   <div className="selectors">
   <Selector :setCryoto="setCryptoFirst"/>
   <Selector :setCryoto="setCryptoSecond"/>
@@ -34,10 +34,18 @@ export default {
       },
       convert() {
         if(this.amout <= 0) {
-
+          this.error = 'Введите число больше нуля';
+          return;
+        }  else  if(this.cryptoFirst == this.cryptoSecond) {
+          this.error = 'Выберите другую валюту';
+          return;
+        }  else  if(this.cryptoFirst == '' || this.cryptoSecond == '') {
+          this.error = 'Выберите валюту';
+          return;
         }
-      }
+        this.error = '';
     }
+  }
 }
 
 
