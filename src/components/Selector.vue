@@ -1,13 +1,31 @@
 <template>
 <ul>
-<li>Bitcoin</li>
-<li>ETH</li>
-<li>USDT</li>
+<li @click="setCryoto('BTC')" :className="current == 'BTC' ? 'active' : ''">Bitcoin</li>
+<li @click="setCryoto('ETH')" :className="current == 'ETH' ? 'active' : ''">ETH</li>
+<li @click="setCryoto('USDT')" :className="current == 'USDT' ? 'active' : ''">USDT</li>
 </ul>
 </template>
     
 <script>
-
+export default {
+    props: {
+        setCrypto: {
+            type: Function,
+            required: true
+        }
+    },
+    data() {
+        return {
+            current: ''
+        }
+    },
+    methods: {
+        selecItem(val) {
+            this.setCryoto(val);
+            this.current = val;
+        }
+    }
+}
 </script>
        
 <style scoped>

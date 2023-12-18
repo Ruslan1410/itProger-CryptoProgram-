@@ -1,6 +1,6 @@
 <template>
   <h1>CRYPTO</h1>
-  <Input :changeAmout="changeAmout" />
+  <Input :changeAmout="changeAmout" convert="convert" />
 
   <div className="selectors">
   <Selector :setCryoto="setCryptoFirst"/>
@@ -19,6 +19,7 @@ export default {
         amout: 0,
         cryptoFirst: '',
         cryptoSecond: '',
+        error: '' ,
       }
     },
     methods: {
@@ -30,6 +31,11 @@ export default {
       },
       setCryptoSecond(val){
         this.cryptoSecond = val
+      },
+      convert() {
+        if(this.amout <= 0) {
+
+        }
       }
     }
 }
